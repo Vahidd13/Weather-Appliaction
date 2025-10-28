@@ -1,0 +1,150 @@
+/* Global root styling: soft gradient background & default font */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%,
+        #e0eafc 0%, #cfdef3 100%);
+    -fx-padding: 0;
+}
+
+/* Header bar */
+.hbox {
+    -fx-background-color: rgba(255,255,255,0.8);
+    -fx-padding: 12 16 12 16;
+    -fx-spacing: 8;
+    -fx-alignment: center_left;
+    -fx-border-color: #bbb;
+    -fx-border-width: 0 0 1 0;
+}
+
+/* Buttons: rounded, subtle shadows, hover effect */
+.button {
+    -fx-background-color: #4285f4;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-padding: 6 12 6 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 3, 0.0 , 0 , 1 );
+}
+.button:hover {
+    -fx-background-color: #3367d6;
+}
+
+/* ComboBox & TextField styling */
+.combo-box, .text-field {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #888;
+    -fx-padding: 4 6 4 6;
+    -fx-cursor: text;
+}
+.combo-box:hover, .text-field:hover {
+    -fx-border-color: #555;
+}
+
+/* GridPane cell labels */
+.label {
+    -fx-text-fill: #333;
+    -fx-font-weight: normal;
+}
+.label .label {
+    -fx-font-weight: bold;
+}
+
+/* Specific IDs for dynamic labels to stand out */
+#tempLabel, #feelsLabel {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+#uvLabel {
+    -fx-text-fill: #d84315;  /* UV in reddish tone */
+}
+
+/* ImageView (icon) container tweaks */
+.image-view {
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.4) , 5, 0.0 , 0 , 2 );
+}
+
+/* Dialog content styling */
+.dialog-pane .content {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* Footer status (if you add one) */
+.status-bar {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-padding: 8 12 8 12;
+    -fx-alignment: center_left;
+    -fx-border-color: #bbb;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* --------------------------------------------------
+   Dark Mode Overrides
+   Apply by adding the 'dark-mode' style class to the root node
+---------------------------------------------------- */
+
+/* Root background & text */
+.root.dark-mode {
+    -fx-background-color: linear-gradient(from 0% 0% to 0% 100%,
+        #1e1e1e 0%, #121212 100%);
+    -fx-text-fill: #eee;
+}
+
+/* Header bar */
+.root.dark-mode .hbox {
+    -fx-background-color: rgba(40,40,40,0.8);
+    -fx-border-color: #444;
+}
+
+/* Buttons */
+.root.dark-mode .button {
+    -fx-background-color: #444;
+    -fx-text-fill: #eee;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.3) , 3, 0.0 , 0 , 1 );
+}
+.root.dark-mode .button:hover {
+    -fx-background-color: #555;
+}
+
+/* ComboBox & TextField */
+.root.dark-mode .combo-box,
+.root.dark-mode .text-field {
+    -fx-background-color: #333;
+    -fx-border-color: #666;
+    -fx-text-fill: #eee;
+}
+.root.dark-mode .combo-box:hover,
+.root.dark-mode .text-field:hover {
+    -fx-border-color: #888;
+}
+
+/* Labels */
+.root.dark-mode .label {
+    -fx-text-fill: #ddd;
+}
+.root.dark-mode #tempLabel,
+.root.dark-mode #feelsLabel {
+    -fx-text-fill: #fff;
+}
+.root.dark-mode #uvLabel {
+    -fx-text-fill: #ff7043;
+}
+
+/* ImageView shadow adjustment */
+.root.dark-mode .image-view {
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 2 );
+}
+
+/* Dialogs */
+.root.dark-mode .dialog-pane {
+    -fx-background-color: #2e2e2e;
+    -fx-text-fill: #eee;
+}
+
+/* Footer status bar */
+.root.dark-mode .status-bar {
+    -fx-background-color: rgba(40,40,40,0.9);
+    -fx-border-color: #444;
+}

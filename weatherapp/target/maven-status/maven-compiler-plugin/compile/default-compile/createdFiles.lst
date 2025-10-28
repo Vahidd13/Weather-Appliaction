@@ -1,0 +1,5 @@
+com/example/weather/model/WeatherData.class
+com/example/weather/MainApp.class
+com/example/weather/model/ForecastEntry.class
+com/example/weather/controller/MainController.class
+com/example/weather/service/WeatherService.class

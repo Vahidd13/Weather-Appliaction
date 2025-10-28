@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/19"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.weather.controller.MainController"
+            fx:id="rootPane">
+
+    <top>
+        <HBox spacing="8" styleClass="hbox">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <ComboBox fx:id="cityBox" editable="true" prefWidth="150"/>
+            <Button fx:id="unitBtn" text="°C → °F" onAction="#onToggleUnit"/>
+            <Button text="Get Weather" onAction="#onFetch"/>
+            <Button text="3-Day Forecast" onAction="#onForecast3"/>
+            <Button text="Hourly Forecast" onAction="#onForecastHourly"/>
+            <Button text="Clear Cache" onAction="#onClearCache"/>
+            <CheckBox fx:id="autoRefreshCheck" text="Auto-refresh every 15m"/>
+            <Button text="Export Forecast CSV" onAction="#onExportCsv"/>
+            <CheckBox fx:id="darkModeCheck" text="Dark Mode"/>
+            <!-- new chart buttons -->
+            <Button text="Hourly Chart" onAction="#onShowHourlyChart"/>
+            <Button text="Daily Chart" onAction="#onShowDailyChart"/>
+        </HBox>
+    </top>
+
+    <center>
+        <GridPane hgap="10" vgap="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Temp:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="tempLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Feels:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="feelsLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Wind:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="windLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Hum:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <Label fx:id="humLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Pres:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Label fx:id="presLabel" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="UV:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <Label fx:id="uvLabel" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="Sunrise/Sunset:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <Label fx:id="sunLabel" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <ImageView fx:id="iconView"
+                       fitWidth="80" fitHeight="80"
+                       GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.rowSpan="4"/>
+        </GridPane>
+    </center>
+
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="5" right="10" bottom="5" left="10"/>
+            </padding>
+            <Label text="Last updated:"/>
+            <Label fx:id="statusLabel" text="—"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
